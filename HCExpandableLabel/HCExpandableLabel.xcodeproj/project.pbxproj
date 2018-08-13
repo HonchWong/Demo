@@ -13,6 +13,7 @@
 		0056B63B21219DFA00F4A0F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0056B63A21219DFA00F4A0F8 /* Assets.xcassets */; };
 		0056B63E21219DFA00F4A0F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0056B63C21219DFA00F4A0F8 /* LaunchScreen.storyboard */; };
 		0056B64121219DFA00F4A0F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056B64021219DFA00F4A0F8 /* main.m */; };
+		0056B66B2121A0D400F4A0F8 /* HCExpandableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056B66A2121A0D400F4A0F8 /* HCExpandableLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		0056B63D21219DFA00F4A0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0056B63F21219DFA00F4A0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0056B64021219DFA00F4A0F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0056B6692121A0D400F4A0F8 /* HCExpandableLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCExpandableLabel.h; sourceTree = "<group>"; };
+		0056B66A2121A0D400F4A0F8 /* HCExpandableLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCExpandableLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				0056B63221219DF600F4A0F8 /* AppDelegate.m */,
 				0056B63421219DF600F4A0F8 /* ViewController.h */,
 				0056B63521219DF600F4A0F8 /* ViewController.m */,
+				0056B6692121A0D400F4A0F8 /* HCExpandableLabel.h */,
+				0056B66A2121A0D400F4A0F8 /* HCExpandableLabel.m */,
 				0056B63721219DF600F4A0F8 /* Main.storyboard */,
 				0056B63A21219DFA00F4A0F8 /* Assets.xcassets */,
 				0056B63C21219DFA00F4A0F8 /* LaunchScreen.storyboard */,
@@ -142,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0056B63621219DF600F4A0F8 /* ViewController.m in Sources */,
+				0056B66B2121A0D400F4A0F8 /* HCExpandableLabel.m in Sources */,
 				0056B64121219DFA00F4A0F8 /* main.m in Sources */,
 				0056B63321219DF600F4A0F8 /* AppDelegate.m in Sources */,
 			);
