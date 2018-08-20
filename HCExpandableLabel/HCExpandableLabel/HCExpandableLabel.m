@@ -65,6 +65,7 @@
         self.my_font = textFont;
         self.my_textColor = textColor;
         self.my_lineSpacing = lineSpacing;
+//        self.headIndent = 10;
         
         self.label = [[UILabel alloc] init];
         self.label.textColor = textColor;
@@ -127,6 +128,8 @@
         [paragraphStyle setLineSpacing:self.my_lineSpacing];
     }
     
+    [paragraphStyle setHeadIndent:50];
+    
     NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc]
                                                 initWithString:showStr
                                                 attributes:@{NSFontAttributeName:self.my_font}];
@@ -172,6 +175,7 @@
     [paragraphStyle setLineSpacing:lineSpacing];
     //此处设置NSLineBreakByTruncatingTail会导致计算文字高度方法失效
     //[paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
+    [paragraphStyle setHeadIndent:50];
     
     CGSize size = [text boundingRectWithSize:maxSize
                                      options:NSStringDrawingUsesLineFragmentOrigin
@@ -188,6 +192,9 @@
                                                                                       attributes:@{NSFontAttributeName:font}];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];
+    
+    [paragraphStyle setHeadIndent:50];
+
     [attributedStr addAttribute:NSParagraphStyleAttributeName
                           value:paragraphStyle
                           range:NSMakeRange(0, [text length])];
