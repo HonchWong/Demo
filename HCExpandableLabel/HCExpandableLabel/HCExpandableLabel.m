@@ -65,7 +65,6 @@
         self.my_font = textFont;
         self.my_textColor = textColor;
         self.my_lineSpacing = lineSpacing;
-//        self.headIndent = 10;
         
         self.label = [[UILabel alloc] init];
         self.label.textColor = textColor;
