@@ -202,11 +202,11 @@
     //paragraph
     CGFloat lineSpacing = self.my_lineSpacing;
     CGFloat firstLineHeadIndent = self.my_firstLineHeadIndent;
-    CTParagraphStyleSetting _settings[] = {
+    CTParagraphStyleSetting paragraphSettings[] = {
         {kCTParagraphStyleSpecifierFirstLineHeadIndent, sizeof(firstLineHeadIndent), &firstLineHeadIndent},
         {kCTParagraphStyleSpecifierMaximumLineSpacing, sizeof(lineSpacing), &lineSpacing},
     };
-    CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(_settings, sizeof(_settings) / sizeof(_settings[0]));
+    CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(paragraphSettings, sizeof(paragraphSettings) / sizeof(paragraphSettings[0]));
     [attStr addAttribute:(NSString *)kCTParagraphStyleAttributeName value:(__bridge id)paragraphStyle range:NSMakeRange(0, attStr.length)];
 
     //font
@@ -233,6 +233,7 @@
         [linesArray addObject:lineString];
     }
     
+    CFRelease(paragraphStyle);
     CFRelease(fontRef);
     CFRelease(frameSetter);
     CFRelease(frame);
