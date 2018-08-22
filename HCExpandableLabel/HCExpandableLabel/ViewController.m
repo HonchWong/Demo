@@ -30,11 +30,13 @@
     [self.expandableLabel setDetailText:data];
     self.expandableLabel.frame = CGRectMake(15, 100, self.expandableLabel.frame.size.width, self.expandableLabel.frame.size.height);
     
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((width - 50) * 0.5,
-                                                               (height - 80),
-                                                               100,
-                                                               50)];
+    UIButton *btn = [[UIButton alloc] init];
     [btn setTitle:@"change" forState:UIControlStateNormal];
+    [btn sizeToFit];
+    [btn setFrame:CGRectMake((width - btn.frame.size.width) * 0.5,
+                             (height - btn.frame.size.height) - 50,
+                             btn.frame.size.width,
+                             btn.frame.size.height)];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self
             action:@selector(changeLabelStats)
