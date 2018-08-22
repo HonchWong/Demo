@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HCLogService.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)logError:(UIButton *)sender {
+    HCLogError(@"logError");
 }
 
+- (IBAction)logWarning:(UIButton *)sender {
+    HCLogWarning(@"logWarning");
+}
+
+- (IBAction)logInfo:(UIButton *)sender {
+    HCLogInfo(@"logInfo");
+}
+
+- (IBAction)logDebug:(UIButton *)sender {
+    HCLogDebug(@"logDebug");
+}
+
+- (IBAction)logVerbose:(UIButton *)sender {
+    HCLogVerbose(@"logVerbose");
+}
 
 @end
