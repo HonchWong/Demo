@@ -14,6 +14,7 @@
 		0057CD53212AE45C001FBF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0057CD52212AE45C001FBF69 /* Assets.xcassets */; };
 		0057CD56212AE45C001FBF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057CD54212AE45C001FBF69 /* LaunchScreen.storyboard */; };
 		0057CD59212AE45C001FBF69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0057CD58212AE45C001FBF69 /* main.m */; };
+		00833DF1212D9407008600D6 /* HCTTYLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00833DF0212D9407008600D6 /* HCTTYLogFormatter.m */; };
 		9D2AA7E9D350000060B87739 /* libPods-HCLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3888EC8D7D4C897733DF50DF /* libPods-HCLog.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		0057CD55212AE45C001FBF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0057CD57212AE45C001FBF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0057CD58212AE45C001FBF69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00833DEF212D9407008600D6 /* HCTTYLogFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCTTYLogFormatter.h; sourceTree = "<group>"; };
+		00833DF0212D9407008600D6 /* HCTTYLogFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCTTYLogFormatter.m; sourceTree = "<group>"; };
 		3888EC8D7D4C897733DF50DF /* libPods-HCLog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCLog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54DF7CAE051D0A389611FEB2 /* Pods-HCLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCLog.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCLog/Pods-HCLog.release.xcconfig"; sourceTree = "<group>"; };
 		B8BE82928041BE98863623B6 /* Pods-HCLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCLog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCLog/Pods-HCLog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -52,6 +55,8 @@
 			children = (
 				0020A3C8212D8EA90087D345 /* HCLogService.h */,
 				0020A3C9212D8EA90087D345 /* HCLogService.m */,
+				00833DEF212D9407008600D6 /* HCTTYLogFormatter.h */,
+				00833DF0212D9407008600D6 /* HCTTYLogFormatter.m */,
 			);
 			path = HCLog;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				0057CD4E212AE45B001FBF69 /* ViewController.m in Sources */,
 				0057CD59212AE45C001FBF69 /* main.m in Sources */,
 				0057CD4B212AE45B001FBF69 /* AppDelegate.m in Sources */,
+				00833DF1212D9407008600D6 /* HCTTYLogFormatter.m in Sources */,
 				0020A3CA212D8EA90087D345 /* HCLogService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

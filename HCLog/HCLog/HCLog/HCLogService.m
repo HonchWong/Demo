@@ -7,10 +7,13 @@
 //
 
 #import "HCLogService.h"
+#import "HCTTYLogFormatter.h"
 
 @implementation HCLogService
 
 + (void)start {
+    HCTTYLogFormatter *TTYLogFormatter = [[HCTTYLogFormatter alloc] init];
+    [[DDTTYLogger sharedInstance] setLogFormatter:TTYLogFormatter];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 }
 
