@@ -23,7 +23,7 @@
 @property (nonatomic, strong) UIFont *my_font;
 @property (nonatomic, assign) CGFloat my_lineSpacing;
 @property (nonatomic, strong) UIColor *my_textColor;
-
+@property (nonatomic, assign) NSInteger my_firstLineHeadIndent;
 @end
 
 @implementation HCExpandableLabel
@@ -35,20 +35,16 @@
         UIFont *textfont = [UIFont systemFontOfSize:14];
         UIColor *color = [UIColor colorWithWhite:0.7f alpha:1.0f];
         CGFloat lineSpacing = 4;
+        NSInteger firstLineHeadIndent = 20;
         
         self = [[HCExpandableLabel alloc] initWithMaxLine:maxLine
                                                  maxWidth:maxWidth
                                                  textFont:textfont
                                                 textColor:color
-                                              lineSpacing:lineSpacing];
+                                              lineSpacing:lineSpacing
+                                      firstLineHeadIndent:firstLineHeadIndent];
         
-        [self addSubview:self.moreImageView];
-//        [self.expandImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.width.mas_equalTo(@(13).qr_margin);
-//            make.height.mas_equalTo(@(13).qr_margin);
-//            make.bottom.equalTo(self.mas_bottom).offset(@(1).qr_margin);
-//            make.right.equalTo(self.mas_right);
-//        }];
+//        [self addSubview:self.moreImageView];
     }
     
     return self;
@@ -58,13 +54,15 @@
                        maxWidth:(CGFloat)maxWidth
                        textFont:(UIFont *)textFont
                       textColor:(UIColor *)textColor
-                    lineSpacing:(CGFloat)lineSpacing {
+                    lineSpacing:(CGFloat)lineSpacing
+            firstLineHeadIndent:(NSInteger)firstLineHeadIndent{
     if (self = [super init]) {
         self.maxWidth = maxWidth;
         self.maxLine = maxLine;
         self.my_font = textFont;
         self.my_textColor = textColor;
         self.my_lineSpacing = lineSpacing;
+        self.my_firstLineHeadIndent = firstLineHeadIndent;
         
         self.label = [[UILabel alloc] init];
         self.label.textColor = textColor;
@@ -82,8 +80,9 @@
     self.str = str;
     
     CGSize size = [self boundingRectWithWidth:self.maxWidth
-                                 withTextFont:self.my_font
-                              withLineSpacing:self.my_lineSpacing
+                                     textFont:self.my_font
+                                  lineSpacing:self.my_lineSpacing
+                          firstLineHeadIndent:self.my_firstLineHeadIndent
                                          text:str];
     self.bounds = CGRectMake(0, 0, size.width, size.height);
     self.label.frame = CGRectMake(0, 0, size.width, size.height);
@@ -106,9 +105,10 @@
         self.maxLineStr = strs;
         showStr = strs;
         CGSize size2 = [self boundingRectWithWidth:self.maxWidth
-                                      withTextFont:self.my_font
-                                   withLineSpacing:self.my_lineSpacing
-                                              text:showStr];
+                                         textFont:self.my_font
+                                      lineSpacing:self.my_lineSpacing
+                              firstLineHeadIndent:self.my_firstLineHeadIndent
+                                             text:showStr];
         self.bounds = CGRectMake(0, 0, size2.width, size2.height);
         self.label.frame = CGRectMake(0, 0, size2.width, size2.height);
         
@@ -127,7 +127,7 @@
         [paragraphStyle setLineSpacing:self.my_lineSpacing];
     }
     
-    [paragraphStyle setHeadIndent:50];
+    [paragraphStyle setFirstLineHeadIndent:self.my_firstLineHeadIndent];
     
     NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc]
                                                 initWithString:showStr
@@ -153,28 +153,37 @@
     }
     self.isExpand = !self.isExpand;
     
-    self.label.attributedText = [self attributedStringFromStingWithFont:self.my_font
-                                                            lineSpacing:self.my_lineSpacing
-                                                                   text:showStr];
+    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:showStr
+                                                                                      attributes:@{NSFontAttributeName:self.my_font}];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:self.my_lineSpacing];
+    [paragraphStyle setFirstLineHeadIndent:self.my_firstLineHeadIndent];
+    [attributedStr addAttribute:NSParagraphStyleAttributeName
+                          value:paragraphStyle
+                          range:NSMakeRange(0, [showStr length])];
+    self.label.attributedText = attributedStr;
+    
     CGSize size = [self boundingRectWithWidth:self.maxWidth
-                                 withTextFont:self.my_font
-                              withLineSpacing:self.my_lineSpacing
-                                         text:showStr];
+                                      textFont:self.my_font
+                                   lineSpacing:self.my_lineSpacing
+                           firstLineHeadIndent:self.my_firstLineHeadIndent
+                                          text:showStr];
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
     self.label.frame = CGRectMake(0, 0, size.width, size.height);
     [self layoutIfNeeded];
 }
 
 - (CGSize)boundingRectWithWidth:(CGFloat)maxWidth
-                   withTextFont:(UIFont *)font
-                withLineSpacing:(CGFloat)lineSpacing
-                           text:(NSString *)text{
+                       textFont:(UIFont *)font
+                    lineSpacing:(CGFloat)lineSpacing
+            firstLineHeadIndent:(NSInteger)firstLineHeadIndent
+                           text:(NSString *)text {
     CGSize maxSize = CGSizeMake(maxWidth, CGFLOAT_MAX);
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];
     //此处设置NSLineBreakByTruncatingTail会导致计算文字高度方法失效
     //[paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
-    [paragraphStyle setHeadIndent:50];
+    [paragraphStyle setFirstLineHeadIndent:firstLineHeadIndent];
     
     CGSize size = [text boundingRectWithSize:maxSize
                                      options:NSStringDrawingUsesLineFragmentOrigin
@@ -184,32 +193,28 @@
     return size;
 }
 
-- (NSMutableAttributedString *)attributedStringFromStingWithFont:(UIFont *)font
-                                                     lineSpacing:(CGFloat)lineSpacing
-                                                            text:(NSString *)text{
-    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:text
-                                                                                      attributes:@{NSFontAttributeName:font}];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:lineSpacing];
-    
-    [paragraphStyle setHeadIndent:50];
-
-    [attributedStr addAttribute:NSParagraphStyleAttributeName
-                          value:paragraphStyle
-                          range:NSMakeRange(0, [text length])];
-    return attributedStr;
-}
-
 - (NSArray *)separatedLinesFromLabel:(UILabel *)label  {
     NSString *text = label.text;
     UIFont   *font = label.font;
     
-    CTFontRef myFont = CTFontCreateWithName((__bridge CFStringRef)([font fontName]), [font pointSize], NULL);
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:text];
-    [attStr addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)myFont range:NSMakeRange(0, attStr.length)];
-    
+
+    //paragraph
+    CGFloat lineSpacing = self.my_lineSpacing;
+    CGFloat firstLineHeadIndent = self.my_firstLineHeadIndent;
+    CTParagraphStyleSetting _settings[] = {
+        {kCTParagraphStyleSpecifierFirstLineHeadIndent, sizeof(firstLineHeadIndent), &firstLineHeadIndent},
+        {kCTParagraphStyleSpecifierMaximumLineSpacing, sizeof(lineSpacing), &lineSpacing},
+    };
+    CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(_settings, sizeof(_settings) / sizeof(_settings[0]));
+    [attStr addAttribute:(NSString *)kCTParagraphStyleAttributeName value:(__bridge id)paragraphStyle range:NSMakeRange(0, attStr.length)];
+
+    //font
+    CTFontRef fontRef = CTFontCreateWithName((__bridge CFStringRef)([font fontName]), [font pointSize], NULL);
+    [attStr addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)fontRef range:NSMakeRange(0, attStr.length)];
+
     CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attStr);
-    
+
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, NULL, CGRectMake(0,0,label.frame.size.width,100000));
     
@@ -228,7 +233,7 @@
         [linesArray addObject:lineString];
     }
     
-    CFRelease(myFont);
+    CFRelease(fontRef);
     CFRelease(frameSetter);
     CFRelease(frame);
     CFRelease(path);
