@@ -196,6 +196,7 @@
 - (NSArray *)separatedLinesFromLabel:(UILabel *)label  {
     NSString *text = label.text;
     UIFont   *font = label.font;
+    CGFloat labelWidth = label.frame.size.width;
     
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:text];
 
@@ -216,7 +217,7 @@
     CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attStr);
 
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, CGRectMake(0,0,label.frame.size.width,100000));
+    CGPathAddRect(path, NULL, CGRectMake(0, 0, labelWidth, INT_MAX));
     
     CTFrameRef frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, 0), path, NULL);
     
