@@ -8,6 +8,7 @@
 
 #import "HCLogService.h"
 #import "HCTTYLogFormatter.h"
+#import "HCAntennaLogger.h"
 
 unsigned long long const kHCFileLoggerMaxFileSize      = 1024 * 1024;      // 单个日志文件大小上限 (bytes) 1 MB
 NSTimeInterval     const kHCFileLoggerRollingFrequency = 2 * 60;           // 单个日志时效上限 (sec) 24 Hours
@@ -19,6 +20,7 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // �
 + (void)start {
     [self setupConsoleLogger];
     [self setupFileLogger];
+
 }
 
 + (void)setupConsoleLogger {
@@ -39,6 +41,17 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // �
     fileLogger.maximumFileSize = kHCFileLoggerMaxFileSize;
 
     [DDLog addLogger:fileLogger];
+}
+     
++ (void)setupAntennaLogger {
+    NSString *yourServerURLString = @"...";
+    NSString *yourServerLogMethod = @"...";
+    [[Antenna sharedLogger] addChannelWithURL:[NSURL URLWithString:yourServerURLString] method:yourServerLogMethod];
+    [[Antenna sharedLogger] startLoggingApplicationLifecycleNotifications];
+    
+    HCAntennaLogger *logger = [[HCAntennaLogger alloc] initWithAntenna:[Antenna sharedLogger]];
+    
+    [DDLog addLogger:logger];
 }
 
 @end

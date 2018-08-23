@@ -7,7 +7,6 @@ target 'HCLog' do
 
   # Pods for HCLog
 
-  pod 'CocoaLumberjack'
+  pod 'CocoaLumberjack', '3.4.2'
   pod 'Antenna'
-  pod 'DDAntennaLogger'
 end
