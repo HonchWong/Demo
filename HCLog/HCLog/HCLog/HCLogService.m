@@ -20,7 +20,7 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // �
 + (void)start {
     [self setupConsoleLogger];
     [self setupFileLogger];
-
+    [self setupAntennaLogger];
 }
 
 + (void)setupConsoleLogger {
@@ -44,9 +44,20 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // �
 }
      
 + (void)setupAntennaLogger {
-    NSString *yourServerURLString = @"...";
-    NSString *yourServerLogMethod = @"...";
-    [[Antenna sharedLogger] addChannelWithURL:[NSURL URLWithString:yourServerURLString] method:yourServerLogMethod];
+//    npm install express-antenna-cocoalumberjack
+//    export NODE_EXPRESS_ANTENNA_LOG_PATH=/tmp/  设置log输出路径，默认为null，输出至Console
+//    node node_modules/express-antenna-cocoalumberjack/app.js
+    CFDictionaryRef dicRef = CFNetworkCopySystemProxySettings();
+    const CFStringRef proxyCFstr = (const CFStringRef)CFDictionaryGetValue(dicRef,
+                                                                           (const void*)kCFNetworkProxiesHTTPProxy);
+    NSString *proxyStr = (__bridge NSString *)proxyCFstr;
+    CFRelease(dicRef);
+    
+    if (!proxyStr) { return; }
+
+    NSString *serverStr = [NSString stringWithFormat:@"http://%@:3205/log/", proxyStr];
+    NSURL *logUrl = [NSURL URLWithString:serverStr];
+    [[Antenna sharedLogger] addChannelWithURL:logUrl method:@"POST"];
     [[Antenna sharedLogger] startLoggingApplicationLifecycleNotifications];
     
     HCAntennaLogger *logger = [[HCAntennaLogger alloc] initWithAntenna:[Antenna sharedLogger]];

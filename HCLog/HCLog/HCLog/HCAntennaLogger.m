@@ -31,19 +31,19 @@
     NSDictionary *logPayload = @{
                                  @"file": logMessage.fileName,
                                  @"method": logMessage.function,
-                                 @"timestamp": logMessage.timestamp,
-                                 @"log-level": @(logMessage.level),
+                                 @"timestamp": logMessage->_timestamp,
+                                 @"log-level": @(logMessage->_level),
                                  };
     return logPayload;
 }
 
 - (void)logMessage:(DDLogMessage *)logMessage {
-    NSString *logString = logMessage.message;
+    NSString *logString = logMessage->_message;
     
-    if (self.logFormatter) {
-        logString = [self.logFormatter formatLogMessage:logMessage];
+    if (self->_logFormatter) {
+        logString = [self->_logFormatter formatLogMessage:logMessage];
     }
-    
+
     if (logString) {
         NSDictionary *extraLogPayload = [self extraLogPayloadFromLogMessage:logMessage];
         NSMutableDictionary *logPayload = [NSMutableDictionary dictionaryWithDictionary:extraLogPayload];
