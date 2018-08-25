@@ -55,8 +55,8 @@
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
     requestManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     NSString *requestStr = @"http://193.112.107.123:8000/api2/auth-token/";
-    NSDictionary *parameters = @{@"username":@"625845706@qq.com",
-                                 @"password":@"mima123456"};
+    NSDictionary *parameters = @{@"username":@"xxxxx",
+                                 @"password":@"xxxxx"};
     [requestManager POST:requestStr parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *resultJsonDic = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableLeaves error:nil];
         NSString *token = [resultJsonDic objectForKey:@"token"];
