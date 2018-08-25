@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0015F6052131118600A48A64 /* HCDynamicLoggerLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F6042131118600A48A64 /* HCDynamicLoggerLevel.m */; };
 		0020A3CA212D8EA90087D345 /* HCLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0020A3C9212D8EA90087D345 /* HCLogService.m */; };
 		0057CD4B212AE45B001FBF69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0057CD4A212AE45B001FBF69 /* AppDelegate.m */; };
 		0057CD4E212AE45B001FBF69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0057CD4D212AE45B001FBF69 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0015F6032131118600A48A64 /* HCDynamicLoggerLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCDynamicLoggerLevel.h; sourceTree = "<group>"; };
+		0015F6042131118600A48A64 /* HCDynamicLoggerLevel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCDynamicLoggerLevel.m; sourceTree = "<group>"; };
 		0020A3C8212D8EA90087D345 /* HCLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCLogService.h; sourceTree = "<group>"; };
 		0020A3C9212D8EA90087D345 /* HCLogService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCLogService.m; sourceTree = "<group>"; };
 		0057CD46212AE45B001FBF69 /* HCLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +65,8 @@
 				00833DF0212D9407008600D6 /* HCTTYLogFormatter.m */,
 				00588A79212F0E290020CEDA /* HCAntennaLogger.h */,
 				00588A7A212F0E290020CEDA /* HCAntennaLogger.m */,
+				0015F6032131118600A48A64 /* HCDynamicLoggerLevel.h */,
+				0015F6042131118600A48A64 /* HCDynamicLoggerLevel.m */,
 			);
 			path = HCLog;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				00833DF1212D9407008600D6 /* HCTTYLogFormatter.m in Sources */,
 				00588A7B212F0E290020CEDA /* HCAntennaLogger.m in Sources */,
 				0020A3CA212D8EA90087D345 /* HCLogService.m in Sources */,
+				0015F6052131118600A48A64 /* HCDynamicLoggerLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

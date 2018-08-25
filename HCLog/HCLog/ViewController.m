@@ -21,7 +21,7 @@
 }
 
 - (IBAction)logError:(UIButton *)sender {
-    HCLogError(@"logError");
+    HCLogError(@"logError%@", @"2");
 }
 
 - (IBAction)logWarning:(UIButton *)sender {
@@ -38,6 +38,18 @@
 
 - (IBAction)logVerbose:(UIButton *)sender {
     HCLogVerbose(@"logVerbose");
+}
+
+- (IBAction)changeLogLevel:(UIButton *)sender {
+    if (sender.tag == 0) {
+        sender.tag = 1;
+//        ddLogLevel = DDLogLevelAll;
+        [HCLogService changeLogLevel:HCLogLevelAll];
+    } else {
+        sender.tag = 0;
+//        ddLogLevel = DDLogLevelInfo;
+        [HCLogService changeLogLevel:HCLogLevelInfo];
+    }
 }
 
 @end

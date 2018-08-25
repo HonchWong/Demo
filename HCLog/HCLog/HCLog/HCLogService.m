@@ -23,6 +23,34 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // æ‰
     [self setupAntennaLogger];
 }
 
++ (void)changeLogLevel:(HCLogLevel)logLevel {
+    DDLogLevel ddlogLevel;
+    switch (logLevel) {
+        case HCLogLevelOff:
+            ddlogLevel = DDLogLevelOff;
+            break;
+        case HCLogLevelError:
+            ddlogLevel = DDLogLevelError;
+            break;
+        case HCLogLevelWarning:
+            ddlogLevel = DDLogLevelWarning;
+            break;
+        case HCLogLevelInfo:
+            ddlogLevel = DDLogLevelInfo;
+            break;
+        case HCLogLevelDebug:
+            ddlogLevel = DDLogLevelDebug;
+            break;
+        case HCLogLevelVerbose:
+            ddlogLevel = DDLogLevelVerbose;
+            break;
+        case HCLogLevelAll:
+            ddlogLevel = DDLogLevelAll;
+            break;
+    }
+    [HCDynamicLoggerLevel ddSetLogLevel:ddlogLevel];
+}
+
 + (void)setupConsoleLogger {
     HCTTYLogFormatter *TTYLogFormatter = [[HCTTYLogFormatter alloc] init];
     [[DDTTYLogger sharedInstance] setLogFormatter:TTYLogFormatter];
