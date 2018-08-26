@@ -51,6 +51,20 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // æ‰
     [HCDynamicLoggerLevel ddSetLogLevel:ddlogLevel];
 }
 
++ (NSString *)logFileDirectory {
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *logFileDirectory = [documentsDirectory stringByAppendingPathComponent:@"LogDirectory"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDir = NO;
+    BOOL existed = [fileManager fileExistsAtPath:logFileDirectory isDirectory:&isDir];
+    if (!isDir || !existed) {
+        [fileManager createDirectoryAtPath:logFileDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    return logFileDirectory;
+}
+
 + (void)setupConsoleLogger {
     HCTTYLogFormatter *TTYLogFormatter = [[HCTTYLogFormatter alloc] init];
     [[DDTTYLogger sharedInstance] setLogFormatter:TTYLogFormatter];
@@ -58,9 +72,7 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // æ‰
 }
 
 + (void)setupFileLogger {
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    
-    DDLogFileManagerDefault *logFileManager = [[DDLogFileManagerDefault alloc] initWithLogsDirectory:documentsDirectory];
+    DDLogFileManagerDefault *logFileManager = [[DDLogFileManagerDefault alloc] initWithLogsDirectory:[self logFileDirectory]];
     [logFileManager setMaximumNumberOfLogFiles:kHCFileLoggerMaxNumLogFiles];
     [logFileManager setLogFilesDiskQuota:kHCFileLoggerFilesDiskQuota];
     

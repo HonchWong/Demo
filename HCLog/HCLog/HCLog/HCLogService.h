@@ -35,5 +35,6 @@ typedef NS_ENUM(NSUInteger, HCLogLevel){
 
 + (void)start;
 + (void)changeLogLevel:(HCLogLevel)logLevel;
++ (NSString *)logFileDirectory;
 
 @end

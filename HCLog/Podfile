@@ -9,4 +9,7 @@ target 'HCLog' do
 
   pod 'CocoaLumberjack', '3.4.2'
   pod 'Antenna'
+  pod 'SSZipArchive'
+
+
 end
