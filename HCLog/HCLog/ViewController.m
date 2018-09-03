@@ -51,7 +51,7 @@
 }
 
 - (IBAction)upload:(UIButton *)sender {
-    [HCLogUploadManager upload];
+//    [HCLogUploadManager upload];
 }
 
 @end

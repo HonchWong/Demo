@@ -6,10 +6,10 @@
 //  Copyright © 2018年 黄鸿昌. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface HCLogUploadManager : NSObject
-
-+ (void)upload;
-
-@end
+//#import <Foundation/Foundation.h>
+//
+//@interface HCLogUploadManager : NSObject
+//
+//+ (void)upload;
+//
+//@end

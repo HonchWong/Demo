@@ -8,7 +8,7 @@
 
 #import "HCLogService.h"
 #import "HCTTYLogFormatter.h"
-#import "HCAntennaLogger.h"
+//#import "HCAntennaLogger.h"
 
 unsigned long long const kHCFileLoggerMaxFileSize      = 1024 * 1024;      // 单个日志文件大小上限 (bytes) 1 MB
 NSTimeInterval     const kHCFileLoggerRollingFrequency = 2 * 60;           // 单个日志时效上限 (sec) 24 Hours
@@ -19,8 +19,8 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // �
 
 + (void)start {
     [self setupConsoleLogger];
-    [self setupFileLogger];
-    [self setupAntennaLogger];
+//    [self setupFileLogger];
+//    [self setupAntennaLogger];
 }
 
 + (void)changeLogLevel:(HCLogLevel)logLevel {
@@ -70,39 +70,39 @@ unsigned long long const kHCFileLoggerFilesDiskQuota   = 20 * 1024 * 1024; // �
     [[DDTTYLogger sharedInstance] setLogFormatter:TTYLogFormatter];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 }
-
-+ (void)setupFileLogger {
-    DDLogFileManagerDefault *logFileManager = [[DDLogFileManagerDefault alloc] initWithLogsDirectory:[self logFileDirectory]];
-    [logFileManager setMaximumNumberOfLogFiles:kHCFileLoggerMaxNumLogFiles];
-    [logFileManager setLogFilesDiskQuota:kHCFileLoggerFilesDiskQuota];
-    
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] initWithLogFileManager:logFileManager];
-    fileLogger.rollingFrequency = kHCFileLoggerRollingFrequency;
-    fileLogger.maximumFileSize = kHCFileLoggerMaxFileSize;
-
-    [DDLog addLogger:fileLogger];
-}
-     
-+ (void)setupAntennaLogger {
-//    npm install express-antenna-cocoalumberjack
-//    export NODE_EXPRESS_ANTENNA_LOG_PATH=/tmp/  设置log输出路径，默认为null，输出至Console
-//    node node_modules/express-antenna-cocoalumberjack/app.js
-    CFDictionaryRef dicRef = CFNetworkCopySystemProxySettings();
-    const CFStringRef proxyCFstr = (const CFStringRef)CFDictionaryGetValue(dicRef,
-                                                                           (const void*)kCFNetworkProxiesHTTPProxy);
-    NSString *proxyStr = (__bridge NSString *)proxyCFstr;
-    CFRelease(dicRef);
-    
-    if (!proxyStr) { return; }
-
-    NSString *serverStr = [NSString stringWithFormat:@"http://%@:3205/log/", proxyStr];
-    NSURL *logUrl = [NSURL URLWithString:serverStr];
-    [[Antenna sharedLogger] addChannelWithURL:logUrl method:@"POST"];
-    [[Antenna sharedLogger] startLoggingApplicationLifecycleNotifications];
-    
-    HCAntennaLogger *logger = [[HCAntennaLogger alloc] initWithAntenna:[Antenna sharedLogger]];
-    
-    [DDLog addLogger:logger];
-}
+//
+//+ (void)setupFileLogger {
+//    DDLogFileManagerDefault *logFileManager = [[DDLogFileManagerDefault alloc] initWithLogsDirectory:[self logFileDirectory]];
+//    [logFileManager setMaximumNumberOfLogFiles:kHCFileLoggerMaxNumLogFiles];
+//    [logFileManager setLogFilesDiskQuota:kHCFileLoggerFilesDiskQuota];
+//
+//    DDFileLogger *fileLogger = [[DDFileLogger alloc] initWithLogFileManager:logFileManager];
+//    fileLogger.rollingFrequency = kHCFileLoggerRollingFrequency;
+//    fileLogger.maximumFileSize = kHCFileLoggerMaxFileSize;
+//
+//    [DDLog addLogger:fileLogger];
+//}
+//
+//+ (void)setupAntennaLogger {
+////    npm install express-antenna-cocoalumberjack
+////    export NODE_EXPRESS_ANTENNA_LOG_PATH=/tmp/  设置log输出路径，默认为null，输出至Console
+////    node node_modules/express-antenna-cocoalumberjack/app.js
+//    CFDictionaryRef dicRef = CFNetworkCopySystemProxySettings();
+//    const CFStringRef proxyCFstr = (const CFStringRef)CFDictionaryGetValue(dicRef,
+//                                                                           (const void*)kCFNetworkProxiesHTTPProxy);
+//    NSString *proxyStr = (__bridge NSString *)proxyCFstr;
+//    CFRelease(dicRef);
+//
+//    if (!proxyStr) { return; }
+//
+//    NSString *serverStr = [NSString stringWithFormat:@"http://%@:3205/log/", proxyStr];
+//    NSURL *logUrl = [NSURL URLWithString:serverStr];
+//    [[Antenna sharedLogger] addChannelWithURL:logUrl method:@"POST"];
+//    [[Antenna sharedLogger] startLoggingApplicationLifecycleNotifications];
+//
+//    HCAntennaLogger *logger = [[HCAntennaLogger alloc] initWithAntenna:[Antenna sharedLogger]];
+//
+//    [DDLog addLogger:logger];
+//}
 
 @end
