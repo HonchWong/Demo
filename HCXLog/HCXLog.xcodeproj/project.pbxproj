@@ -12,7 +12,11 @@
 		00381C64213D2C110011E536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00381C62213D2C110011E536 /* Main.storyboard */; };
 		00381C66213D2C120011E536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00381C65213D2C120011E536 /* Assets.xcassets */; };
 		00381C69213D2C120011E536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00381C67213D2C120011E536 /* LaunchScreen.storyboard */; };
-		00381C6C213D2C120011E536 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00381C6B213D2C120011E536 /* main.m */; };
+		00381C6C213D2C120011E536 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00381C6B213D2C120011E536 /* main.mm */; };
+		00381C74213D2CB30011E536 /* mars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00381C73213D2CB30011E536 /* mars.framework */; };
+		00381C76213D2CD10011E536 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00381C75213D2CD10011E536 /* CoreTelephony.framework */; };
+		00381C78213D2CDC0011E536 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00381C77213D2CDC0011E536 /* SystemConfiguration.framework */; };
+		00381C7A213D2CE60011E536 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00381C79213D2CE60011E536 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +29,11 @@
 		00381C65213D2C120011E536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00381C68213D2C120011E536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00381C6A213D2C120011E536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00381C6B213D2C120011E536 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00381C6B213D2C120011E536 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		00381C73213D2CB30011E536 /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mars.framework; path = Mars/xlog_bitcode/mars.framework; sourceTree = "<group>"; };
+		00381C75213D2CD10011E536 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		00381C77213D2CDC0011E536 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		00381C79213D2CE60011E536 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00381C7A213D2CE60011E536 /* libz.tbd in Frameworks */,
+				00381C78213D2CDC0011E536 /* SystemConfiguration.framework in Frameworks */,
+				00381C76213D2CD10011E536 /* CoreTelephony.framework in Frameworks */,
+				00381C74213D2CB30011E536 /* mars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +56,7 @@
 			children = (
 				00381C5B213D2C110011E536 /* HCXLog */,
 				00381C5A213D2C110011E536 /* Products */,
+				00381C72213D2CB30011E536 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,9 +79,20 @@
 				00381C65213D2C120011E536 /* Assets.xcassets */,
 				00381C67213D2C120011E536 /* LaunchScreen.storyboard */,
 				00381C6A213D2C120011E536 /* Info.plist */,
-				00381C6B213D2C120011E536 /* main.m */,
+				00381C6B213D2C120011E536 /* main.mm */,
 			);
 			path = HCXLog;
+			sourceTree = "<group>";
+		};
+		00381C72213D2CB30011E536 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00381C79213D2CE60011E536 /* libz.tbd */,
+				00381C77213D2CDC0011E536 /* SystemConfiguration.framework */,
+				00381C75213D2CD10011E536 /* CoreTelephony.framework */,
+				00381C73213D2CB30011E536 /* mars.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00381C61213D2C110011E536 /* ViewController.m in Sources */,
-				00381C6C213D2C120011E536 /* main.m in Sources */,
+				00381C6C213D2C120011E536 /* main.mm in Sources */,
 				00381C5E213D2C110011E536 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +309,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mars/xlog_bitcode",
+				);
 				INFOPLIST_FILE = HCXLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +330,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mars/xlog_bitcode",
+				);
 				INFOPLIST_FILE = HCXLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
