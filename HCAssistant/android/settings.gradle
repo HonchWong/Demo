@@ -1,0 +1,3 @@
+rootProject.name = 'HCAssistant'
+
+include ':app'

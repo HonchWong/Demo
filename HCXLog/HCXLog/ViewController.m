@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LogUtil.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)logDebugAction {
+    LOG_DEBUG(kModuleViewController, @"debug");
 }
 
+- (IBAction)logInfoAction {
+    LOG_DEBUG(kModuleViewController, @"Info");
+}
+
+- (IBAction)logWarningAction {
+    LOG_DEBUG(kModuleViewController, @"Warning");
+}
+
+- (IBAction)logErrorAction {
+    LOG_DEBUG(kModuleViewController, @"Error");
+}
 
 @end
