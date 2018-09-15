@@ -20,8 +20,7 @@
 - (void)setTitle:(NSString *)moduleName actionURL:(NSString *)moduleURL {
   self.moduleNameLabel.text = moduleName;
   [self.moduleNameLabel sizeToFit];
-//  self.backgroundColor = [UIColor colorWithWhite:7 alpha:0.2];
-  self.backgroundColor = [UIColor greenColor;
+  self.backgroundColor = [UIColor greenColor];
 }
 
 - (void)layoutSubviews {
