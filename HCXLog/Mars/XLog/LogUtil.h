@@ -24,6 +24,8 @@
 
 @interface LogUtil : NSObject
 
++ (void)initialization;
+
 @end
 
 #define __FILENAME__ (strrchr(__FILE__,'/')+1)

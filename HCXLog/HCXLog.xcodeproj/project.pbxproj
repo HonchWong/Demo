@@ -19,6 +19,8 @@
 		00381C7A213D2CE60011E536 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00381C79213D2CE60011E536 /* libz.tbd */; };
 		00381C80213D2EED0011E536 /* LogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00381C7C213D2EEC0011E536 /* LogUtil.m */; };
 		00381C81213D2EED0011E536 /* LogHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00381C7D213D2EEC0011E536 /* LogHelper.mm */; };
+		00567C9121562E560042E3F7 /* HCXLogHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00567C9021562E560042E3F7 /* HCXLogHelper.mm */; };
+		00567C9421562F240042E3F7 /* HCLogUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00567C9321562F240042E3F7 /* HCLogUtil.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		00381C7D213D2EEC0011E536 /* LogHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LogHelper.mm; sourceTree = "<group>"; };
 		00381C7E213D2EEC0011E536 /* LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUtil.h; sourceTree = "<group>"; };
 		00381C7F213D2EEC0011E536 /* LogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogHelper.h; sourceTree = "<group>"; };
+		00567C8F21562E560042E3F7 /* HCXLogHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCXLogHelper.h; sourceTree = "<group>"; };
+		00567C9021562E560042E3F7 /* HCXLogHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HCXLogHelper.mm; sourceTree = "<group>"; };
+		00567C9221562F240042E3F7 /* HCLogUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCLogUtil.h; sourceTree = "<group>"; };
+		00567C9321562F240042E3F7 /* HCLogUtil.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HCLogUtil.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,10 @@
 				00381C7E213D2EEC0011E536 /* LogUtil.h */,
 				00381C7F213D2EEC0011E536 /* LogHelper.h */,
 				00381C7D213D2EEC0011E536 /* LogHelper.mm */,
+				00567C9221562F240042E3F7 /* HCLogUtil.h */,
+				00567C9321562F240042E3F7 /* HCLogUtil.mm */,
+				00567C8F21562E560042E3F7 /* HCXLogHelper.h */,
+				00567C9021562E560042E3F7 /* HCXLogHelper.mm */,
 			);
 			name = XLog;
 			path = Mars/XLog;
@@ -184,7 +194,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00567C9121562E560042E3F7 /* HCXLogHelper.mm in Sources */,
 				00381C80213D2EED0011E536 /* LogUtil.m in Sources */,
+				00567C9421562F240042E3F7 /* HCLogUtil.mm in Sources */,
 				00381C61213D2C110011E536 /* ViewController.m in Sources */,
 				00381C6C213D2C120011E536 /* main.mm in Sources */,
 				00381C81213D2EED0011E536 /* LogHelper.mm in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LogUtil.h"
+#import "HCLogUtil.h"
 
 @interface ViewController ()
 
@@ -21,19 +21,23 @@
 }
 
 - (IBAction)logDebugAction {
-    LOG_DEBUG(kModuleViewController, @"debug");
+    HCLOG_DEBUG(kModuleViewController, @"我是Debug");
 }
 
 - (IBAction)logInfoAction {
-    LOG_DEBUG(kModuleViewController, @"Info");
+    HCLOG_INFO(kModuleViewController, @"我是Info");
 }
 
 - (IBAction)logWarningAction {
-    LOG_DEBUG(kModuleViewController, @"Warning");
+    HCLOG_WARNING(kModuleViewController, @"我是Warning");
 }
 
 - (IBAction)logErrorAction {
-    LOG_DEBUG(kModuleViewController, @"Error");
+    HCLOG_ERROR(kModuleViewController, @"我是Error");
+}
+
+- (IBAction)chageLevel {
+//    [HCLogUtil ]
 }
 
 @end

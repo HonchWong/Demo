@@ -1,13 +1,12 @@
 //
 //  AppDelegate.m
-//  HCLog
+//  HCExpandableTableView
 //
-//  Created by 黄鸿昌 on 2018/8/20.
+//  Created by 黄鸿昌 on 2018/8/27.
 //  Copyright © 2018年 黄鸿昌. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "HCLogService.h"
 
 @interface AppDelegate ()
 
@@ -17,11 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [HCLogService start];
-    
+    // Override point for customization after application launch.
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

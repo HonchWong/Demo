@@ -22,4 +22,8 @@
 
 @implementation LogUtil
 
++ (void)initialization {
+    
+}
+
 @end

@@ -1,15 +1,13 @@
 //
 //  main.m
-//  HCXLog
+//  HCExpandableTableView
 //
-//  Created by 黄鸿昌 on 2018/9/3.
-//  Copyright © 2018年 huanghongchang. All rights reserved.
+//  Created by 黄鸿昌 on 2018/8/27.
+//  Copyright © 2018年 黄鸿昌. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-
-
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
