@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HCLogger.h"
 
 @interface ViewController ()
 
@@ -16,9 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
+- (IBAction)logError {
+    LOG_ERROR(kModuleViewController, @"abc");
+}
+- (IBAction)logWarning {
+    LOG_WARNING(kModuleViewController, @"abc");
+}
+- (IBAction)logInfo {
+    LOG_INFO(kModuleViewController, @"abc");
+}
+- (IBAction)logDebug {
+    LOG_DEBUG(kModuleViewController, @"abc");
+}
+- (IBAction)changLogLevel {
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

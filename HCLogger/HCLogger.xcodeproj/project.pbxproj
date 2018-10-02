@@ -13,6 +13,15 @@
 		0047B0FB2163450F0053E890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0047B0FA2163450F0053E890 /* Assets.xcassets */; };
 		0047B0FE2163450F0053E890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0047B0FC2163450F0053E890 /* LaunchScreen.storyboard */; };
 		0047B1012163450F0053E890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0047B1002163450F0053E890 /* main.m */; };
+		00CD53F621634DE900B97FC3 /* HCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CD53F521634DE900B97FC3 /* HCLogger.m */; };
+		00CD540121635D8300B97FC3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD540021635D8300B97FC3 /* libz.tbd */; };
+		00CD540321635D8A00B97FC3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD540221635D8A00B97FC3 /* SystemConfiguration.framework */; };
+		00CD540521635D9300B97FC3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD540421635D9300B97FC3 /* CoreTelephony.framework */; };
+		00CD540721635DDD00B97FC3 /* mars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD540621635DDD00B97FC3 /* mars.framework */; };
+		00CD5410216371D300B97FC3 /* HCDDLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CD540D216371D300B97FC3 /* HCDDLogHelper.m */; };
+		00CD5411216371D300B97FC3 /* HCDDLogLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CD540F216371D300B97FC3 /* HCDDLogLevel.m */; };
+		00CD5415216371DB00B97FC3 /* HCXLogHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00CD5414216371DB00B97FC3 /* HCXLogHelper.mm */; };
+		00CD54182163729000B97FC3 /* HCTTYLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CD54172163729000B97FC3 /* HCTTYLogFormatter.m */; };
 		65EE719229C83ECCEB2C96B4 /* libPods-HCLogger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A605D8A8258F78E0BEFA55A6 /* libPods-HCLogger.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +36,20 @@
 		0047B0FD2163450F0053E890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0047B0FF2163450F0053E890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0047B1002163450F0053E890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00CD53F421634DE900B97FC3 /* HCLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCLogger.h; sourceTree = "<group>"; };
+		00CD53F521634DE900B97FC3 /* HCLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCLogger.m; sourceTree = "<group>"; };
+		00CD540021635D8300B97FC3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		00CD540221635D8A00B97FC3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		00CD540421635D9300B97FC3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		00CD540621635DDD00B97FC3 /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mars.framework; path = HCLogger/HCLogger/xlog_bitcode/mars.framework; sourceTree = "<group>"; };
+		00CD540C216371D300B97FC3 /* HCDDLogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDDLogHelper.h; sourceTree = "<group>"; };
+		00CD540D216371D300B97FC3 /* HCDDLogHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDDLogHelper.m; sourceTree = "<group>"; };
+		00CD540E216371D300B97FC3 /* HCDDLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDDLogLevel.h; sourceTree = "<group>"; };
+		00CD540F216371D300B97FC3 /* HCDDLogLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDDLogLevel.m; sourceTree = "<group>"; };
+		00CD5413216371DB00B97FC3 /* HCXLogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCXLogHelper.h; sourceTree = "<group>"; };
+		00CD5414216371DB00B97FC3 /* HCXLogHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HCXLogHelper.mm; sourceTree = "<group>"; };
+		00CD54162163729000B97FC3 /* HCTTYLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HCTTYLogFormatter.h; path = ../../../../HCLog/HCLog/HCLog/HCTTYLogFormatter.h; sourceTree = "<group>"; };
+		00CD54172163729000B97FC3 /* HCTTYLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HCTTYLogFormatter.m; path = ../../../../HCLog/HCLog/HCLog/HCTTYLogFormatter.m; sourceTree = "<group>"; };
 		A4CA85AF41E0AA26CCB75009 /* Pods-HCLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCLogger/Pods-HCLogger.release.xcconfig"; sourceTree = "<group>"; };
 		A605D8A8258F78E0BEFA55A6 /* libPods-HCLogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCLogger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCB91A1B3E113D1F15AF9CF /* Pods-HCLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCLogger/Pods-HCLogger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -37,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CD540721635DDD00B97FC3 /* mars.framework in Frameworks */,
+				00CD540521635D9300B97FC3 /* CoreTelephony.framework in Frameworks */,
+				00CD540321635D8A00B97FC3 /* SystemConfiguration.framework in Frameworks */,
+				00CD540121635D8300B97FC3 /* libz.tbd in Frameworks */,
 				65EE719229C83ECCEB2C96B4 /* libPods-HCLogger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +92,7 @@
 		0047B0F02163450D0053E890 /* HCLogger */ = {
 			isa = PBXGroup;
 			children = (
+				00CD53F321634DD800B97FC3 /* HCLogger */,
 				0047B0F12163450D0053E890 /* AppDelegate.h */,
 				0047B0F22163450D0053E890 /* AppDelegate.m */,
 				0047B0F42163450D0053E890 /* ViewController.h */,
@@ -78,9 +106,46 @@
 			path = HCLogger;
 			sourceTree = "<group>";
 		};
+		00CD53F321634DD800B97FC3 /* HCLogger */ = {
+			isa = PBXGroup;
+			children = (
+				00CD5412216371DB00B97FC3 /* XLog */,
+				00CD540B216371D300B97FC3 /* DDLog */,
+				00CD53F421634DE900B97FC3 /* HCLogger.h */,
+				00CD53F521634DE900B97FC3 /* HCLogger.m */,
+			);
+			path = HCLogger;
+			sourceTree = "<group>";
+		};
+		00CD540B216371D300B97FC3 /* DDLog */ = {
+			isa = PBXGroup;
+			children = (
+				00CD540C216371D300B97FC3 /* HCDDLogHelper.h */,
+				00CD540D216371D300B97FC3 /* HCDDLogHelper.m */,
+				00CD54162163729000B97FC3 /* HCTTYLogFormatter.h */,
+				00CD54172163729000B97FC3 /* HCTTYLogFormatter.m */,
+				00CD540E216371D300B97FC3 /* HCDDLogLevel.h */,
+				00CD540F216371D300B97FC3 /* HCDDLogLevel.m */,
+			);
+			path = DDLog;
+			sourceTree = "<group>";
+		};
+		00CD5412216371DB00B97FC3 /* XLog */ = {
+			isa = PBXGroup;
+			children = (
+				00CD5413216371DB00B97FC3 /* HCXLogHelper.h */,
+				00CD5414216371DB00B97FC3 /* HCXLogHelper.mm */,
+			);
+			path = XLog;
+			sourceTree = "<group>";
+		};
 		DF5ED15B0ED0B90C75C4F894 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00CD540621635DDD00B97FC3 /* mars.framework */,
+				00CD540421635D9300B97FC3 /* CoreTelephony.framework */,
+				00CD540221635D8A00B97FC3 /* SystemConfiguration.framework */,
+				00CD540021635D8300B97FC3 /* libz.tbd */,
 				A605D8A8258F78E0BEFA55A6 /* libPods-HCLogger.a */,
 			);
 			name = Frameworks;
@@ -187,9 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CD54182163729000B97FC3 /* HCTTYLogFormatter.m in Sources */,
+				00CD5415216371DB00B97FC3 /* HCXLogHelper.mm in Sources */,
+				00CD53F621634DE900B97FC3 /* HCLogger.m in Sources */,
 				0047B0F62163450D0053E890 /* ViewController.m in Sources */,
 				0047B1012163450F0053E890 /* main.m in Sources */,
 				0047B0F32163450D0053E890 /* AppDelegate.m in Sources */,
+				00CD5411216371D300B97FC3 /* HCDDLogLevel.m in Sources */,
+				00CD5410216371D300B97FC3 /* HCDDLogHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +402,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HCLogger/HCLogger/xlog_bitcode",
+				);
 				INFOPLIST_FILE = HCLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,6 +424,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HCLogger/HCLogger/xlog_bitcode",
+				);
 				INFOPLIST_FILE = HCLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
