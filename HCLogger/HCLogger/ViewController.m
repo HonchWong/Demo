@@ -34,6 +34,9 @@
 }
 - (IBAction)changLogLevel {
 }
+- (IBAction)flushXLog {
+    [HCLogger flushXLog];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

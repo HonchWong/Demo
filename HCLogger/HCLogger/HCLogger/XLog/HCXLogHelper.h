@@ -21,9 +21,7 @@
              message:(NSString *)message;
 
 + (BOOL)shouldLog:(TLogLevel)level;
-//+ (BOOL)shouldLogWrite:(TLogLevel)level;
-//+ (BOOL)shouldLogJustPrint:(TLogLevel)level;
-
++ (void)flushLog;
 
 @end
 

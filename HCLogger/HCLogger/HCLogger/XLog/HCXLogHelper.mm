@@ -17,7 +17,8 @@ static NSUInteger g_processID = 0;
 @implementation HCXLogHelper
 
 + (void)setupXlog {
-    NSString* logPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingString:@"/log"];
+    NSString *logPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingString:@"/log"];
+    NSLog(@"logPath %@", logPath);
     
     // set do not backup for logpath
     const char* attrName = "com.apple.MobileBackup";
@@ -49,12 +50,15 @@ static NSUInteger g_processID = 0;
 }
 
 + (BOOL)shouldLog:(TLogLevel)level {
-    
-    //    if (level >= xlogger_Level()) {
-    return YES;
-    //    }
+    if (level >= xlogger_Level()) {
+        return YES;
+    }
     
     return NO;
+}
+
++ (void)flushLog {
+    appender_flush();
 }
 
 @end

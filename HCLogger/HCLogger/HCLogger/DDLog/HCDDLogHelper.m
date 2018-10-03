@@ -21,31 +21,8 @@
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 }
 
-+ (void)logWithLevel:(DDLogLevel)logLevel
-          moduleName:(const char*)moduleName
-             message:(NSString *)message {
-    // MRAK - todo 根据module 过滤 log
-    switch (logLevel) {
-        case DDLogLevelOff:
-            break;
-        case DDLogLevelError:
-            DDLogError(message);
-            break;
-        case DDLogLevelWarning:
-            DDLogWarn(message);
-            break;
-        case DDLogLevelInfo:
-            DDLogInfo(message);
-            break;
-        case DDLogLevelDebug:
-            DDLogDebug(message);
-            break;
-        case DDLogLevelVerbose:
-            DDLogVerbose(message);
-            break;
-        case DDLogLevelAll:
-            break;
-    }
++ (BOOL)shouldLog:(const char*)moduleName {
+    return YES;
 }
 
 @end

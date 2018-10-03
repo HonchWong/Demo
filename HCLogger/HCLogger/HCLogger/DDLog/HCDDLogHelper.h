@@ -18,14 +18,33 @@
 @interface HCDDLogHelper : NSObject
 
 + (void)setupDDLog;
-
-+ (void)logWithLevel:(DDLogLevel)logLevel
-          moduleName:(const char*)moduleName
-            message:(NSString *)message;
++ (BOOL)shouldLog:(const char*)moduleName;
 
 @end
 
 #define HCDDLog(level, module, format, ...) \
 NSString *message = [NSString stringWithFormat:format, ##__VA_ARGS__, nil]; \
-[HCDDLogHelper logWithLevel:level moduleName:module message:message];
+if ([HCDDLogHelper shouldLog:module]) { \
+    switch (level) { \
+        case DDLogLevelOff: \
+            break; \
+        case DDLogLevelError: \
+            DDLogError(message); \
+            break; \
+        case DDLogLevelWarning: \
+            DDLogWarn(message); \
+            break; \
+        case DDLogLevelInfo: \
+            DDLogInfo(message); \
+            break; \
+        case DDLogLevelDebug: \
+            DDLogDebug(message); \
+            break; \
+        case DDLogLevelVerbose: \
+            DDLogVerbose(message); \
+            break; \
+        case DDLogLevelAll: \
+            break; \
+    } \
+}
 

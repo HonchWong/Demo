@@ -15,4 +15,8 @@
     [HCDDLogHelper setupDDLog];
 }
 
++ (void)flushXLog {
+    [HCXLogHelper flushLog];
+}
+
 @end

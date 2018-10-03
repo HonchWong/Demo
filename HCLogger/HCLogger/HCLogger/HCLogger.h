@@ -13,6 +13,7 @@
 @interface HCLogger : NSObject
 
 + (void)setupLogger;
++ (void)flushXLog;
 
 @end
 
