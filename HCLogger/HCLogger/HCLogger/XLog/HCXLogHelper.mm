@@ -61,4 +61,8 @@ static NSUInteger g_processID = 0;
     appender_flush();
 }
 
++ (void)closeXLog {
+    appender_close();
+}
+
 @end

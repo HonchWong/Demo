@@ -19,4 +19,8 @@
     [HCXLogHelper flushLog];
 }
 
++ (void)closeXLog {
+    [HCXLogHelper closeXLog];
+}
+
 @end

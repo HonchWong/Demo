@@ -22,6 +22,7 @@
 
 + (BOOL)shouldLog:(TLogLevel)level;
 + (void)flushLog;
++ (void)closeXLog;
 
 @end
 

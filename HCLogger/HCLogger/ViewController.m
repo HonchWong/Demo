@@ -21,7 +21,9 @@
 }
 
 - (IBAction)logError {
-    LOG_ERROR(kModuleViewController, @"abc");
+    for (int i = 0; i < 1000; i++) {
+        LOG_ERROR(kModuleViewController, @"abc");
+    }
 }
 - (IBAction)logWarning {
     LOG_WARNING(kModuleViewController, @"abc");

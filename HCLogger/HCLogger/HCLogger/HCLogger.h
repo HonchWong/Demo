@@ -14,6 +14,7 @@
 
 + (void)setupLogger;
 + (void)flushXLog;
++ (void)closeXLog;
 
 @end
 
