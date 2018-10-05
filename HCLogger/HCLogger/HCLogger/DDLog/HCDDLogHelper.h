@@ -19,6 +19,8 @@
 
 + (void)setupDDLog;
 + (BOOL)shouldLog:(const char*)moduleName;
++ (void)startRemoteLogger;
++ (void)stopRemoteLogger;
 
 @end
 

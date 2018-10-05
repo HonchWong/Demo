@@ -8,5 +8,6 @@ target 'HCLogger' do
   # Pods for HCLogger
 
   pod 'CocoaLumberjack'
+  pod 'PocketSocket'
 
 end

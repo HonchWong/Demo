@@ -67,6 +67,14 @@
                                     <action selector="flushXLog" destination="BYZ-38-t0r" eventType="touchUpInside" id="qeY-Ur-YQ3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiX-QZ-qo2">
+                                <rect key="frame" x="129" y="301" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start RemoteLog"/>
+                                <connections>
+                                    <action selector="startRemoteLog" destination="BYZ-38-t0r" eventType="touchUpInside" id="47a-4G-G4j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

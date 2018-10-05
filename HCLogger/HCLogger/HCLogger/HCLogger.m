@@ -23,4 +23,13 @@
     [HCXLogHelper closeXLog];
 }
 
++ (void)startRemoteLogger {
+    [HCDDLogHelper startRemoteLogger];
+}
+
++ (void)stopRemoteLogger {
+    [HCDDLogHelper stopRemoteLogger];
+}
+
+
 @end

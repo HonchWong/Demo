@@ -21,7 +21,7 @@
 }
 
 - (IBAction)logError {
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 10; i++) {
         LOG_ERROR(kModuleViewController, @"abc");
     }
 }
@@ -38,6 +38,9 @@
 }
 - (IBAction)flushXLog {
     [HCLogger flushXLog];
+}
+- (IBAction)startRemoteLog {
+    [HCLogger startRemoteLogger];
 }
 
 - (void)didReceiveMemoryWarning {

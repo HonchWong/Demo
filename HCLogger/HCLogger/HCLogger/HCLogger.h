@@ -15,6 +15,8 @@
 + (void)setupLogger;
 + (void)flushXLog;
 + (void)closeXLog;
++ (void)startRemoteLogger;
++ (void)stopRemoteLogger;
 
 @end
 
