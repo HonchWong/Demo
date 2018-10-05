@@ -8,8 +8,12 @@
 
 #import "ViewController.h"
 #import "HCLogger.h"
+#import "HCDebugEntranceWindow.h"
+#import "HCDebugEntranceViewController.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) HCDebugEntranceWindow *debugEntranceWindow;
 
 @end
 
@@ -18,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    self.debugEntranceWindow = [[HCDebugEntranceWindow alloc] initWithFrame:rect];
+    HCDebugEntranceViewController *rootVc = [[HCDebugEntranceViewController alloc] init];
+    self.debugEntranceWindow.rootViewController = rootVc;
+    self.debugEntranceWindow.eventDelegate = rootVc;
 }
 
 - (IBAction)logError {
@@ -41,6 +50,8 @@
 }
 - (IBAction)startRemoteLog {
     [HCLogger startRemoteLogger];
+}
+- (IBAction)showDebugTool {
 }
 
 - (void)didReceiveMemoryWarning {
