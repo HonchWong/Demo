@@ -67,40 +67,15 @@
 
 #pragma mark - DDLogger
 - (void)logMessage:(DDLogMessage *)logMessage {
-    NSString *logLevel = nil;
-    switch (logMessage.flag)
-    {
-        case DDLogFlagError:
-            logLevel = @"👹(ERROR) : ";
-            break;
-        case DDLogFlagWarning:
-            logLevel = @"🙀(WARN)  : ";
-            break;
-        case DDLogFlagInfo:
-            logLevel = @"🗂[INFO]  : ";
-            break;
-        case DDLogFlagDebug:
-            logLevel = @"👨🏻‍💻[DEBUG] : ";
-            break;
-        case DDLogFlagVerbose:
-            logLevel = @"📢[VBOSE] : ";
-            break;
+    NSString *logMsg = logMessage->_message;
+    if (_logFormatter) {
+        logMsg = [_logFormatter formatLogMessage:logMessage];
     }
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss"];
-    NSString *dateStr = [dateFormatter stringFromDate:[logMessage timestamp]];
     
-    NSString *formatStr = [NSString stringWithFormat:@"%@ %@%@ %@(line %lu) message: %@",
-                           dateStr,
-                           logLevel,
-                           logMessage.fileName,
-                           logMessage.function,
-                           logMessage.line,
-                           logMessage.message];
     if (self.remoteEnabled) {
         dispatch_semaphore_wait(_clientsSemaphore, DISPATCH_TIME_FOREVER);
         [self.clients enumerateObjectsUsingBlock:^(PSWebSocket * _Nonnull client, NSUInteger idx, BOOL * _Nonnull stop) {
-            [client send:formatStr];
+            [client send:logMsg];
         }];
         dispatch_semaphore_signal(_clientsSemaphore);
     }

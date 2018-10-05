@@ -9,6 +9,7 @@
 #import "HCDDLogHelper.h"
 #import "HCTTYLogFormatter.h"
 #import "HCRemoteLogger.h"
+#import "HCRemoteLogFormatter.h"
 
 @implementation HCDDLogHelper
 
@@ -45,6 +46,8 @@
 
 + (void)setupRemoteLogger {
     HCRemoteLogger *remoteLogger = [HCRemoteLogger sharedInstance];
+    HCRemoteLogFormatter *formatter = [[HCRemoteLogFormatter alloc] init];
+    [remoteLogger setLogFormatter:formatter];
     [remoteLogger start];
     [DDLog addLogger:remoteLogger];
 }

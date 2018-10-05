@@ -14,6 +14,7 @@
 		0047B0FE2163450F0053E890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0047B0FC2163450F0053E890 /* LaunchScreen.storyboard */; };
 		0047B1012163450F0053E890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0047B1002163450F0053E890 /* main.m */; };
 		0065FBC0216738FA0018627F /* HCRemoteLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0065FBBF216738FA0018627F /* HCRemoteLogger.m */; };
+		0065FBD7216750D00018627F /* HCRemoteLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0065FBD6216750D00018627F /* HCRemoteLogFormatter.m */; };
 		00CD53F621634DE900B97FC3 /* HCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CD53F521634DE900B97FC3 /* HCLogger.m */; };
 		00CD540121635D8300B97FC3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD540021635D8300B97FC3 /* libz.tbd */; };
 		00CD540321635D8A00B97FC3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD540221635D8A00B97FC3 /* SystemConfiguration.framework */; };
@@ -39,6 +40,8 @@
 		0047B1002163450F0053E890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0065FBBE216738FA0018627F /* HCRemoteLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCRemoteLogger.h; sourceTree = "<group>"; };
 		0065FBBF216738FA0018627F /* HCRemoteLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCRemoteLogger.m; sourceTree = "<group>"; };
+		0065FBD5216750D00018627F /* HCRemoteLogFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCRemoteLogFormatter.h; sourceTree = "<group>"; };
+		0065FBD6216750D00018627F /* HCRemoteLogFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCRemoteLogFormatter.m; sourceTree = "<group>"; };
 		00CD53F421634DE900B97FC3 /* HCLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCLogger.h; sourceTree = "<group>"; };
 		00CD53F521634DE900B97FC3 /* HCLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCLogger.m; sourceTree = "<group>"; };
 		00CD540021635D8300B97FC3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				00CD540F216371D300B97FC3 /* HCDDLogLevel.m */,
 				0065FBBE216738FA0018627F /* HCRemoteLogger.h */,
 				0065FBBF216738FA0018627F /* HCRemoteLogger.m */,
+				0065FBD5216750D00018627F /* HCRemoteLogFormatter.h */,
+				0065FBD6216750D00018627F /* HCRemoteLogFormatter.m */,
 			);
 			path = DDLog;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				00CD53F621634DE900B97FC3 /* HCLogger.m in Sources */,
 				0047B0F62163450D0053E890 /* ViewController.m in Sources */,
 				0047B1012163450F0053E890 /* main.m in Sources */,
+				0065FBD7216750D00018627F /* HCRemoteLogFormatter.m in Sources */,
 				0047B0F32163450D0053E890 /* AppDelegate.m in Sources */,
 				00CD5411216371D300B97FC3 /* HCDDLogLevel.m in Sources */,
 				00CD5410216371D300B97FC3 /* HCDDLogHelper.m in Sources */,
